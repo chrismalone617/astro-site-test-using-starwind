@@ -10,11 +10,23 @@ import Footer from "@/components/Footer.astro";
 ---
 
 <Layout title="Astro + Starwind UI Landing">
-  <Navigation />
+  <Navigation links={[
+    { href: "/components", label: "Components" },
+    { href: "#features", label: "Features" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contact", label: "Contact" },
+  ]} />
   <Hero />
   <InfoBoxRow />
   <TabsSection />
   <FAQSection />
   <ButtonGroupSection />
-  <Footer />
+  <Footer links={[
+  { href: "/components", label: "Components" },
+  { href: "#features", label: "Features" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#contact", label: "Contact" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+]} />
 </Layout>

@@ -30,6 +30,10 @@
     {
       "name": "tabs",
       "version": "1.4.1"
+    },
+    {
+      "name": "badge",
+      "version": "1.4.0"
     }
   ]
 }

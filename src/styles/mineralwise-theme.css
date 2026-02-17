@@ -1,0 +1,14 @@
+/* MineralWise-inspired theme - matches mineralwise.com palette */
+.mineralwise-theme {
+  --primary: #2ec9cb;
+  --primary-foreground: #ffffff;
+  --primary-accent: #2ec9cb;
+  --secondary: #b45309;
+  --secondary-foreground: #ffffff;
+  --secondary-accent: #b45309;
+  --muted: #f0f4f3;
+  --muted-foreground: #4a5c5a;
+  --accent: #e8f0ee;
+  --accent-foreground: #0d5c4a;
+  --border: #d1e0de;
+}

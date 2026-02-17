@@ -1,0 +1,242 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/starwind/button";
+import { ButtonGroup, ButtonGroupSeparator } from "@/components/starwind/button-group";
+import { Badge } from "@/components/starwind/badge";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/starwind/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/starwind/accordion";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/starwind/tabs";
+import { Separator } from "@/components/starwind/separator";
+import "@/styles/mineralwise-theme.css";
+---
+
+<Layout title="Component Showcase | MineralWise Style">
+  <div class="mineralwise-theme min-h-screen bg-[#fafbfa]">
+    <header class="border-b border-border bg-white py-6 shadow-sm">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold text-[#0d5c4a]">Component Showcase</h1>
+        <p class="mt-8 text-muted-foreground">
+          All available Starwind components with MineralWise-inspired styling.
+        </p>
+      </div>
+    </header>
+
+    <main class="container mx-auto max-w-4xl space-y-16 px-4 py-12">
+      <!-- Buttons -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Button</h2>
+        <div class="flex flex-wrap gap-4">
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="secondary" size="sm">Small</Button>
+          <Button variant="primary" size="lg">Large</Button>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Button Group -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Button Group</h2>
+        <div class="flex flex-wrap gap-6">
+          <ButtonGroup>
+            <Button variant="primary">Primary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="outline">Outline</Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button variant="secondary">Save</Button>
+            <ButtonGroupSeparator />
+            <Button variant="outline">Cancel</Button>
+          </ButtonGroup>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Badges -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Badge</h2>
+        <div class="flex flex-wrap gap-3">
+          <Badge>Default</Badge>
+          <Badge variant="primary">Primary</Badge>
+          <Badge variant="secondary">Secondary</Badge>
+          <Badge variant="outline">Outline</Badge>
+          <Badge variant="success">Success</Badge>
+          <Badge variant="warning">Warning</Badge>
+          <Badge variant="error">Error</Badge>
+          <Badge variant="primary" size="sm">Small</Badge>
+          <Badge variant="secondary" size="lg">Large</Badge>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Cards -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Card</h2>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Card class="border-border bg-white shadow-sm">
+            <CardHeader>
+              <CardTitle>Mineral Rights Education</CardTitle>
+              <CardDescription>
+                Empowering mineral owners with education and insights for informed decisions.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p class="text-sm text-muted-foreground">
+                Learn about leasing, royalties, and title issues from trusted experts.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="primary" size="sm">Learn More</Button>
+            </CardFooter>
+          </Card>
+          <Card class="border-border bg-white shadow-sm">
+            <CardHeader>
+              <CardTitle>1031 Exchange</CardTitle>
+              <CardDescription>
+                Defer capital gains with like-kind mineral exchanges.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p class="text-sm text-muted-foreground">
+                Qualified intermediaries for oil and gas asset exchanges.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" size="sm">Explore</Button>
+            </CardFooter>
+          </Card>
+          <Card class="border-border bg-white shadow-sm">
+            <CardHeader>
+              <CardTitle>Royalty Management</CardTitle>
+              <CardDescription>
+                Track production and revenue across your mineral portfolio.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p class="text-sm text-muted-foreground">
+                Software and services for mineral rights owners.
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="secondary" size="sm">Get Started</Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Accordion -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Accordion</h2>
+        <Accordion type="single" defaultValue="item-0" class="rounded-lg border border-border bg-white p-4">
+          <AccordionItem value="item-0">
+            <AccordionTrigger>What are mineral rights?</AccordionTrigger>
+            <AccordionContent>
+              Mineral rights are the ownership of subsurface resources including oil, gas, coal, and other minerals. They can be separate from surface rights and are often transferred independently.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>How do I know if I own mineral rights?</AccordionTrigger>
+            <AccordionContent>
+              Check your deed or title report. Mineral rights may be listed separately or included with surface rights. A title search can confirm ownership and any existing leases.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>What is a royalty percentage?</AccordionTrigger>
+            <AccordionContent>
+              A royalty is your share of production revenue, typically expressed as a percentage (e.g., 1/8 or 12.5%). It is paid to mineral owners when oil or gas is produced from their land.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
+
+      <Separator />
+
+      <!-- Tabs -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Tabs</h2>
+        <Tabs defaultValue="overview" class="w-full rounded-lg border border-border bg-white p-6">
+          <TabsList class="mb-6">
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="resources">Resources</TabsTrigger>
+            <TabsTrigger value="faq">FAQ</TabsTrigger>
+          </TabsList>
+          <TabsContent value="overview" class="rounded-lg border border-border bg-muted/30 p-6">
+            <h3 class="mb-4 font-semibold text-[#0d5c4a]">Mineral Rights Overview</h3>
+            <p class="text-muted-foreground">
+              Mineral rights can be described as the unseen value associated with a tract of land. As oil and gas production began in the U.S., these rights started to be viewed independently from surface rights.
+            </p>
+          </TabsContent>
+          <TabsContent value="resources" class="rounded-lg border border-border bg-muted/30 p-6">
+            <h3 class="mb-4 font-semibold text-[#0d5c4a]">Helpful Resources</h3>
+            <p class="text-muted-foreground">
+              Top articles on leasing, royalties, taxes, and production. Visit the Mineral Rights Forum to discuss with other landowners.
+            </p>
+          </TabsContent>
+          <TabsContent value="faq" class="rounded-lg border border-border bg-muted/30 p-6">
+            <h3 class="mb-4 font-semibold text-[#0d5c4a]">Common Questions</h3>
+            <p class="text-muted-foreground">
+              Find answers about lease proposals, producing vs. non-producing minerals, and tax implications for royalty owners.
+            </p>
+          </TabsContent>
+        </Tabs>
+      </section>
+
+      <Separator />
+
+      <!-- Card with Badge -->
+      <section>
+        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Card + Badge</h2>
+        <Card class="max-w-md border-border bg-white shadow-sm">
+          <CardHeader>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <CardTitle>Featured Professional</CardTitle>
+                <CardDescription>Trusted mineral rights advisor</CardDescription>
+              </div>
+              <Badge variant="primary">Featured</Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p class="text-sm text-muted-foreground">
+              Experienced in oil and gas leasing, royalty negotiations, and title resolution. Serving mineral owners across Texas and Oklahoma.
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button variant="primary">Contact</Button>
+            <Button variant="outline">Learn More</Button>
+          </CardFooter>
+        </Card>
+      </section>
+    </main>
+
+    <footer class="mt-16 border-t border-border bg-white py-8">
+      <div class="container mx-auto px-4 text-center text-sm text-muted-foreground">
+        <p>Component Showcase · MineralWise-inspired theme</p>
+      </div>
+    </footer>
+  </div>
+</Layout>
