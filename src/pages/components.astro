@@ -24,7 +24,104 @@ import {
   TabsContent,
 } from "@/components/starwind/tabs";
 import { Separator } from "@/components/starwind/separator";
+import { Alert, AlertTitle, AlertDescription } from "@/components/starwind/alert";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/starwind/dialog";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownContent,
+  DropdownItem,
+  DropdownLabel,
+  DropdownSeparator,
+} from "@/components/starwind/dropdown";
+import { Input } from "@/components/starwind/input";
+import { Label } from "@/components/starwind/label";
+import { Textarea } from "@/components/starwind/textarea";
+import { Checkbox } from "@/components/starwind/checkbox";
+import { Switch } from "@/components/starwind/switch";
+import { RadioGroup, RadioGroupItem } from "@/components/starwind/radio-group";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+} from "@/components/starwind/select";
+import { Progress } from "@/components/starwind/progress";
+import { Skeleton } from "@/components/starwind/skeleton";
+import { Slider } from "@/components/starwind/slider";
+import { Spinner } from "@/components/starwind/spinner";
+import { Toggle } from "@/components/starwind/toggle";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from "@/components/starwind/table";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/starwind/breadcrumb";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/starwind/avatar";
+import { AspectRatio } from "@/components/starwind/aspect-ratio";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+} from "@/components/starwind/pagination";
+import { ThemeToggle } from "@/components/starwind/theme-toggle";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/starwind/collapsible";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+} from "@/components/starwind/sheet";
+import { Prose } from "@/components/starwind/prose";
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from "@/components/starwind/alert-dialog";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/starwind/tooltip";
+import { Video } from "@/components/starwind/video";
 import "@/styles/mineralwise-theme.css";
+
+const sectionTitle = "mb-6 text-2xl font-semibold text-[#0d5c4a]";
 ---
 
 <Layout title="Component Showcase | MineralWise Style">
@@ -32,7 +129,7 @@ import "@/styles/mineralwise-theme.css";
     <header class="border-b border-border bg-white py-6 shadow-sm">
       <div class="container mx-auto px-4">
         <h1 class="text-3xl font-bold text-[#0d5c4a]">Component Showcase</h1>
-        <p class="mt-8 text-muted-foreground">
+        <p class="mt-2 text-muted-foreground">
           All available Starwind components with MineralWise-inspired styling.
         </p>
       </div>
@@ -41,7 +138,7 @@ import "@/styles/mineralwise-theme.css";
     <main class="container mx-auto max-w-4xl space-y-16 px-4 py-12">
       <!-- Buttons -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Button</h2>
+        <h2 class={sectionTitle}>Button</h2>
         <div class="flex flex-wrap gap-4">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
@@ -56,7 +153,7 @@ import "@/styles/mineralwise-theme.css";
 
       <!-- Button Group -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Button Group</h2>
+        <h2 class={sectionTitle}>Button Group</h2>
         <div class="flex flex-wrap gap-6">
           <ButtonGroup>
             <Button variant="primary">Primary</Button>
@@ -75,7 +172,7 @@ import "@/styles/mineralwise-theme.css";
 
       <!-- Badges -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Badge</h2>
+        <h2 class={sectionTitle}>Badge</h2>
         <div class="flex flex-wrap gap-3">
           <Badge>Default</Badge>
           <Badge variant="primary">Primary</Badge>
@@ -91,21 +188,46 @@ import "@/styles/mineralwise-theme.css";
 
       <Separator />
 
+      <!-- Alerts -->
+      <section>
+        <h2 class={sectionTitle}>Alert</h2>
+        <div class="space-y-4">
+          <Alert variant="default">
+            <AlertTitle>Default Alert</AlertTitle>
+            <AlertDescription>General information for mineral rights owners.</AlertDescription>
+          </Alert>
+          <Alert variant="primary">
+            <AlertTitle>Primary</AlertTitle>
+            <AlertDescription>Important updates about your mineral rights.</AlertDescription>
+          </Alert>
+          <Alert variant="success">
+            <AlertTitle>Success</AlertTitle>
+            <AlertDescription>Your lease has been successfully submitted.</AlertDescription>
+          </Alert>
+          <Alert variant="warning">
+            <AlertTitle>Warning</AlertTitle>
+            <AlertDescription>Please verify your royalty statement before signing.</AlertDescription>
+          </Alert>
+          <Alert variant="error">
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>There was a problem processing your request.</AlertDescription>
+          </Alert>
+        </div>
+      </section>
+
+      <Separator />
+
       <!-- Cards -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Card</h2>
+        <h2 class={sectionTitle}>Card</h2>
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card class="border-border bg-white shadow-sm">
             <CardHeader>
               <CardTitle>Mineral Rights Education</CardTitle>
-              <CardDescription>
-                Empowering mineral owners with education and insights for informed decisions.
-              </CardDescription>
+              <CardDescription>Empowering mineral owners with education and insights.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p class="text-sm text-muted-foreground">
-                Learn about leasing, royalties, and title issues from trusted experts.
-              </p>
+              <p class="text-sm text-muted-foreground">Learn about leasing, royalties, and title issues.</p>
             </CardContent>
             <CardFooter>
               <Button variant="primary" size="sm">Learn More</Button>
@@ -114,14 +236,10 @@ import "@/styles/mineralwise-theme.css";
           <Card class="border-border bg-white shadow-sm">
             <CardHeader>
               <CardTitle>1031 Exchange</CardTitle>
-              <CardDescription>
-                Defer capital gains with like-kind mineral exchanges.
-              </CardDescription>
+              <CardDescription>Defer capital gains with like-kind mineral exchanges.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p class="text-sm text-muted-foreground">
-                Qualified intermediaries for oil and gas asset exchanges.
-              </p>
+              <p class="text-sm text-muted-foreground">Qualified intermediaries for oil and gas asset exchanges.</p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" size="sm">Explore</Button>
@@ -130,14 +248,10 @@ import "@/styles/mineralwise-theme.css";
           <Card class="border-border bg-white shadow-sm">
             <CardHeader>
               <CardTitle>Royalty Management</CardTitle>
-              <CardDescription>
-                Track production and revenue across your mineral portfolio.
-              </CardDescription>
+              <CardDescription>Track production and revenue across your mineral portfolio.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p class="text-sm text-muted-foreground">
-                Software and services for mineral rights owners.
-              </p>
+              <p class="text-sm text-muted-foreground">Software and services for mineral rights owners.</p>
             </CardContent>
             <CardFooter>
               <Button variant="secondary" size="sm">Get Started</Button>
@@ -150,24 +264,24 @@ import "@/styles/mineralwise-theme.css";
 
       <!-- Accordion -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Accordion</h2>
+        <h2 class={sectionTitle}>Accordion</h2>
         <Accordion type="single" defaultValue="item-0" class="rounded-lg border border-border bg-white p-4">
           <AccordionItem value="item-0">
             <AccordionTrigger>What are mineral rights?</AccordionTrigger>
             <AccordionContent>
-              Mineral rights are the ownership of subsurface resources including oil, gas, coal, and other minerals. They can be separate from surface rights and are often transferred independently.
+              Mineral rights are the ownership of subsurface resources including oil, gas, coal, and other minerals.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-1">
             <AccordionTrigger>How do I know if I own mineral rights?</AccordionTrigger>
             <AccordionContent>
-              Check your deed or title report. Mineral rights may be listed separately or included with surface rights. A title search can confirm ownership and any existing leases.
+              Check your deed or title report. Mineral rights may be listed separately or included with surface rights.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>What is a royalty percentage?</AccordionTrigger>
             <AccordionContent>
-              A royalty is your share of production revenue, typically expressed as a percentage (e.g., 1/8 or 12.5%). It is paid to mineral owners when oil or gas is produced from their land.
+              A royalty is your share of production revenue, typically expressed as a percentage (e.g., 1/8 or 12.5%).
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -177,7 +291,7 @@ import "@/styles/mineralwise-theme.css";
 
       <!-- Tabs -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Tabs</h2>
+        <h2 class={sectionTitle}>Tabs</h2>
         <Tabs defaultValue="overview" class="w-full rounded-lg border border-border bg-white p-6">
           <TabsList class="mb-6">
             <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -186,30 +300,455 @@ import "@/styles/mineralwise-theme.css";
           </TabsList>
           <TabsContent value="overview" class="rounded-lg border border-border bg-muted/30 p-6">
             <h3 class="mb-4 font-semibold text-[#0d5c4a]">Mineral Rights Overview</h3>
-            <p class="text-muted-foreground">
-              Mineral rights can be described as the unseen value associated with a tract of land. As oil and gas production began in the U.S., these rights started to be viewed independently from surface rights.
-            </p>
+            <p class="text-muted-foreground">Mineral rights can be described as the unseen value associated with a tract of land.</p>
           </TabsContent>
           <TabsContent value="resources" class="rounded-lg border border-border bg-muted/30 p-6">
             <h3 class="mb-4 font-semibold text-[#0d5c4a]">Helpful Resources</h3>
-            <p class="text-muted-foreground">
-              Top articles on leasing, royalties, taxes, and production. Visit the Mineral Rights Forum to discuss with other landowners.
-            </p>
+            <p class="text-muted-foreground">Top articles on leasing, royalties, taxes, and production.</p>
           </TabsContent>
           <TabsContent value="faq" class="rounded-lg border border-border bg-muted/30 p-6">
             <h3 class="mb-4 font-semibold text-[#0d5c4a]">Common Questions</h3>
-            <p class="text-muted-foreground">
-              Find answers about lease proposals, producing vs. non-producing minerals, and tax implications for royalty owners.
-            </p>
+            <p class="text-muted-foreground">Find answers about lease proposals and tax implications.</p>
           </TabsContent>
         </Tabs>
       </section>
 
       <Separator />
 
-      <!-- Card with Badge -->
+      <!-- Form Inputs -->
       <section>
-        <h2 class="mb-6 text-2xl font-semibold text-[#0d5c4a]">Card + Badge</h2>
+        <h2 class={sectionTitle}>Input & Label</h2>
+        <div class="max-w-md space-y-4">
+          <div class="space-y-2">
+            <Label for="email">Email address</Label>
+            <Input id="email" type="email" placeholder="owner@example.com" />
+          </div>
+          <div class="space-y-2">
+            <Label for="name">Full name</Label>
+            <Input id="name" placeholder="John Smith" />
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Textarea -->
+      <section>
+        <h2 class={sectionTitle}>Textarea</h2>
+        <div class="max-w-md space-y-2">
+          <Label for="message">Message</Label>
+          <Textarea id="message" placeholder="Describe your mineral rights inquiry..." class="min-h-[120px]" />
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Checkbox & Switch -->
+      <section>
+        <h2 class={sectionTitle}>Checkbox & Switch</h2>
+        <div class="flex flex-wrap gap-8">
+          <div class="flex items-center space-x-2">
+            <Checkbox id="newsletter" />
+            <Label for="newsletter">Subscribe to newsletter</Label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <Switch id="notifications" />
+            <Label for="notifications">Enable notifications</Label>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Radio Group -->
+      <section>
+        <h2 class={sectionTitle}>Radio Group</h2>
+        <RadioGroup name="mineral-status" class="flex flex-col gap-4">
+          <div class="flex items-center space-x-2">
+            <RadioGroupItem value="leased" id="leased" />
+            <Label for="leased">Leased and producing</Label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <RadioGroupItem value="unleased" id="unleased" />
+            <Label for="unleased">Un-leased mineral owner</Label>
+          </div>
+          <div class="flex items-center space-x-2">
+            <RadioGroupItem value="leased-not-producing" id="lnp" />
+            <Label for="lnp">Leased but not producing</Label>
+          </div>
+        </RadioGroup>
+      </section>
+
+      <Separator />
+
+      <!-- Select -->
+      <section>
+        <h2 class={sectionTitle}>Select</h2>
+        <Select class="max-w-xs">
+          <SelectTrigger>
+            <SelectValue placeholder="Select state" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Oil & Gas States</SelectLabel>
+              <SelectItem value="tx">Texas</SelectItem>
+              <SelectItem value="ok">Oklahoma</SelectItem>
+              <SelectItem value="nm">New Mexico</SelectItem>
+              <SelectItem value="nd">North Dakota</SelectItem>
+              <SelectItem value="wv">West Virginia</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </section>
+
+      <Separator />
+
+      <!-- Progress & Slider -->
+      <section>
+        <h2 class={sectionTitle}>Progress & Slider</h2>
+        <div class="max-w-md space-y-6">
+          <div class="space-y-2">
+            <Label>Royalty interest (75%)</Label>
+            <Progress value={75} class="h-2" />
+          </div>
+          <div class="space-y-2">
+            <Label>Estimated value range</Label>
+            <Slider defaultValue={[50]} max={100} step={1} class="w-full" />
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Skeleton & Spinner -->
+      <section>
+        <h2 class={sectionTitle}>Skeleton & Spinner</h2>
+        <div class="flex flex-wrap items-center gap-8">
+          <div class="space-y-2">
+            <Skeleton class="h-12 w-48" />
+            <Skeleton class="h-4 w-32" />
+          </div>
+          <Spinner class="size-8" />
+          <Spinner class="size-12" />
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Toggle -->
+      <section>
+        <h2 class={sectionTitle}>Toggle</h2>
+        <div class="flex flex-wrap gap-4">
+          <Toggle>Default</Toggle>
+          <Toggle variant="outline">Outline</Toggle>
+          <Toggle variant="primary">Primary</Toggle>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Table -->
+      <section>
+        <h2 class={sectionTitle}>Table</h2>
+        <div class="overflow-hidden rounded-lg border border-border">
+          <Table>
+            <TableCaption>Sample royalty statement</TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Well</TableHead>
+                <TableHead>Production</TableHead>
+                <TableHead>Your Share</TableHead>
+                <TableHead>Amount</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Smith #1</TableCell>
+                <TableCell>120 bbl</TableCell>
+                <TableCell>12.5%</TableCell>
+                <TableCell>$1,250</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Jones #2</TableCell>
+                <TableCell>85 bbl</TableCell>
+                <TableCell>12.5%</TableCell>
+                <TableCell>$890</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Davis #3</TableCell>
+                <TableCell>200 bbl</TableCell>
+                <TableCell>12.5%</TableCell>
+                <TableCell>$2,100</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Breadcrumb -->
+      <section>
+        <h2 class={sectionTitle}>Breadcrumb</h2>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/resources">Resources</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Mineral Rights Guide</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </section>
+
+      <Separator />
+
+      <!-- Avatar -->
+      <section>
+        <h2 class={sectionTitle}>Avatar</h2>
+        <div class="flex flex-wrap gap-6">
+          <Avatar variant="primary" size="sm">
+            <AvatarFallback>JD</AvatarFallback>
+          </Avatar>
+          <Avatar variant="primary">
+            <AvatarFallback>MW</AvatarFallback>
+          </Avatar>
+          <Avatar variant="primary" size="lg">
+            <AvatarFallback>AB</AvatarFallback>
+          </Avatar>
+          <Avatar variant="secondary">
+            <AvatarFallback>LS</AvatarFallback>
+          </Avatar>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Aspect Ratio -->
+      <section>
+        <h2 class={sectionTitle}>Aspect Ratio</h2>
+        <div class="max-w-md overflow-hidden rounded-lg border border-border">
+          <AspectRatio ratio={16 / 9}>
+            <div class="flex h-full w-full items-center justify-center bg-muted text-muted-foreground">
+              16:9
+            </div>
+          </AspectRatio>
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Pagination -->
+      <section>
+        <h2 class={sectionTitle}>Pagination</h2>
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">1</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#" class="bg-primary text-primary-foreground">2</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">3</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext href="#" />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </section>
+
+      <Separator />
+
+      <!-- Theme Toggle -->
+      <section>
+        <h2 class={sectionTitle}>Theme Toggle</h2>
+        <ThemeToggle />
+      </section>
+
+      <Separator />
+
+      <!-- Collapsible -->
+      <section>
+        <h2 class={sectionTitle}>Collapsible</h2>
+        <Collapsible class="w-full max-w-md rounded-lg border border-border">
+          <CollapsibleTrigger class="flex w-full items-center justify-between rounded-t-lg border-b border-border bg-muted/30 px-4 py-3 font-medium hover:bg-muted/50">
+            View more details
+          </CollapsibleTrigger>
+          <CollapsibleContent class="p-4">
+            <p class="text-sm text-muted-foreground">
+              Additional information about mineral rights, leasing terms, and royalty calculations. This content is revealed when the trigger is clicked.
+            </p>
+          </CollapsibleContent>
+        </Collapsible>
+      </section>
+
+      <Separator />
+
+      <!-- Dialog -->
+      <section>
+        <h2 class={sectionTitle}>Dialog</h2>
+        <Dialog>
+          <DialogTrigger>
+            <Button variant="primary">Open Dialog</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Mineral Rights Inquiry</DialogTitle>
+              <DialogDescription>
+                Submit your question and a specialist will contact you within 24 hours.
+              </DialogDescription>
+            </DialogHeader>
+            <div class="py-4">
+              <p class="text-sm text-muted-foreground">
+                Our team specializes in oil and gas mineral rights across Texas, Oklahoma, and New Mexico.
+              </p>
+            </div>
+            <DialogFooter>
+              <DialogClose>
+                <Button variant="outline">Cancel</Button>
+              </DialogClose>
+              <Button variant="primary">Submit</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </section>
+
+      <Separator />
+
+      <!-- Dropdown -->
+      <section>
+        <h2 class={sectionTitle}>Dropdown</h2>
+        <Dropdown>
+          <DropdownTrigger>
+            <Button variant="outline">Open Menu</Button>
+          </DropdownTrigger>
+          <DropdownContent>
+            <DropdownLabel>Resources</DropdownLabel>
+            <DropdownItem href="#">Leasing Guide</DropdownItem>
+            <DropdownItem href="#">Royalty Calculator</DropdownItem>
+            <DropdownItem href="#">Tax Information</DropdownItem>
+            <DropdownSeparator />
+            <DropdownLabel>Support</DropdownLabel>
+            <DropdownItem href="#">Contact Us</DropdownItem>
+          </DropdownContent>
+        </Dropdown>
+      </section>
+
+      <Separator />
+
+      <!-- Sheet -->
+      <section>
+        <h2 class={sectionTitle}>Sheet</h2>
+        <Sheet>
+          <SheetTrigger>
+            <Button variant="outline">Open Sheet</Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Mineral Rights Resources</SheetTitle>
+              <SheetDescription>
+                Browse our collection of guides and tools for mineral owners.
+              </SheetDescription>
+            </SheetHeader>
+            <div class="py-6">
+              <p class="text-sm text-muted-foreground">
+                Access articles on leasing, royalties, 1031 exchanges, and more.
+              </p>
+            </div>
+            <SheetFooter>
+              <Button variant="primary">Get Started</Button>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
+      </section>
+
+      <Separator />
+
+      <!-- Alert Dialog -->
+      <section>
+        <h2 class={sectionTitle}>Alert Dialog</h2>
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <Button variant="error">Delete</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete your saved inquiry.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>
+                <Button variant="outline">Cancel</Button>
+              </AlertDialogCancel>
+              <AlertDialogAction>
+                <Button variant="error">Delete</Button>
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      </section>
+
+      <Separator />
+
+      <!-- Tooltip -->
+      <section>
+        <h2 class={sectionTitle}>Tooltip</h2>
+        <Tooltip>
+          <TooltipTrigger>
+            <Button variant="outline">Hover for tooltip</Button>
+          </TooltipTrigger>
+          <TooltipContent>Learn more about mineral rights and royalties.</TooltipContent>
+        </Tooltip>
+      </section>
+
+      <Separator />
+
+      <!-- Video -->
+      <section>
+        <h2 class={sectionTitle}>Video</h2>
+        <div class="max-w-md overflow-hidden rounded-lg border border-border">
+          <Video
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80"
+            class="w-full"
+          />
+        </div>
+      </section>
+
+      <Separator />
+
+      <!-- Prose -->
+      <section>
+        <h2 class={sectionTitle}>Prose</h2>
+        <Prose class="max-w-prose">
+          <h3>Understanding Mineral Rights</h3>
+          <p>
+            Mineral rights can be described as the unseen value associated with a tract of land. Historically, land was transferred among owners, with the royalty rights co-mingled with the surface rights.
+          </p>
+          <p>
+            As oil and gas production began in the U.S., these rights started to be viewed independently. If mineral rights are severed, a new and separate chain of title for the minerals begins.
+          </p>
+        </Prose>
+      </section>
+
+      <Separator />
+
+      <!-- Card + Badge -->
+      <section>
+        <h2 class={sectionTitle}>Card + Badge</h2>
         <Card class="max-w-md border-border bg-white shadow-sm">
           <CardHeader>
             <div class="flex items-start justify-between gap-4">
@@ -222,7 +761,7 @@ import "@/styles/mineralwise-theme.css";
           </CardHeader>
           <CardContent>
             <p class="text-sm text-muted-foreground">
-              Experienced in oil and gas leasing, royalty negotiations, and title resolution. Serving mineral owners across Texas and Oklahoma.
+              Experienced in oil and gas leasing, royalty negotiations, and title resolution.
             </p>
           </CardContent>
           <CardFooter>
