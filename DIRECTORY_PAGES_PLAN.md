@@ -116,7 +116,43 @@ export async function getStaticPaths() {
     props: { data: directories[slug] }
   }));
 }
-const { slug, data } = Astro.props;
+Let me search for current information on both of these.Good, I have solid recent data on both. Here's a comparison:
+
+---
+
+**OpenAI Codex vs. Cursor Composer 1.5**
+
+These two tools represent different philosophies in agentic coding — Codex is a standalone cloud agent you delegate work to, while Composer 1.5 is an interactive model baked into the Cursor IDE for daily coding sessions.
+
+**What they are**
+
+OpenAI Codex is a cloud-based software engineering agent that can work on many tasks in parallel, running each task in its own isolated sandbox environment preloaded with your repository. It's less of a coding companion and more of an autonomous worker you send off to do a job and come back to later.
+
+Cursor's Composer 1.5, by contrast, is designed to "strike a strong balance between speed and intelligence for daily use." It lives inside the Cursor IDE and is optimized for real-time, interactive development sessions.
+
+**How they're trained**
+
+Codex is powered by codex-1 (now GPT-5.3-Codex), a version of OpenAI's o3/GPT-5 optimized for software engineering via reinforcement learning on real-world coding tasks.
+
+Composer 1.5 was built by scaling reinforcement learning 20x on the same pretrained model as Composer 1, with post-training compute ultimately surpassing pretraining compute.
+
+**Key technical differentiators**
+
+Composer 1.5 has two standout architectural features that directly address real developer pain points. Its adaptive thinking calibrates reasoning depth to task difficulty — simple tasks like variable renaming get quick responses with minimal thinking tokens, while complex multi-step tasks trigger deeper reasoning. And when context runs out, Composer 1.5 produces trained self-summaries to continue exploring solutions, triggering recursively on hard examples without accuracy loss.
+
+Codex's differentiator is parallelism and autonomy. Its app functions as a command center where agents work in parallel across projects, with Automations that let Codex work unprompted on routine tasks like issue triage, alert monitoring, and CI/CD.
+
+**Where they live**
+
+Codex runs everywhere — a dedicated web app, CLI, IDE extension (including VS Code), and GitHub integration. The Codex CLI is open-source and supports attaching images like screenshots and wireframes to build shared context on design decisions.
+
+Composer 1.5 is exclusive to the Cursor IDE (built on VS Code). You can't access it via a standalone API or other editors, which is a deliberate design choice that enables tight integration with your local codebase.
+
+**Pricing**
+
+Composer 1.5 is priced at $3.50 per million input tokens and $17.50 per million output tokens, available on paid Cursor plans. Codex is included with ChatGPT Plus, Pro, Business, and Enterprise plans.
+
+If you want an autonomous agent that runs tasks in the background — writing features, filing PRs, running tests while you're focused elsewhere — Codex is built for that. If you're a developer who lives in your IDE and wants a fast, deeply integrated assistant that thinks alongside you in real time, Composer 1.5 is the stronger fit. They're not really competing for the same workflow; many developers could reasonably use both. { slug, data } = Astro.props;
 ---
 ```
 

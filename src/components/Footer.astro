@@ -23,24 +23,24 @@ const {
 } = Astro.props;
 ---
 
-<footer class="border-t border-border bg-muted/50 py-12">
+<footer class="border-t border-border bg-black py-12">
   <div class="container mx-auto px-4">
     <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-      <a href="/" class="text-lg font-semibold text-foreground hover:text-primary transition-colors">
+      <a href="/" class="text-4xl font-semibold text-white hover:text-primary transition-colors">
         {siteName}
       </a>
       <nav class="flex flex-wrap justify-center gap-6">
         {links.map((link) => (
           <a
             href={link.href}
-            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            class="text-sm text-white hover:text-foreground transition-colors"
           >
             {link.label}
           </a>
         ))}
       </nav>
     </div>
-    <p class="mt-8 text-center text-sm text-muted-foreground">
+    <p class="mt-12 text-center text-sm text-muted-foreground">
       {copyright}
     </p>
   </div>
