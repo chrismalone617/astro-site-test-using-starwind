@@ -1,183 +1,123 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/starwind/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/starwind/card";
 import "@/styles/mineralwise-theme.css";
 
+const logoUrl = "https://cloud-1de12d.becdn.net/media/original/8e53f52539030f806ad01673ae22a0c6/mineralWise-logo.png";
+
 const situationLinks = [
-  {
-    href: "https://mineralwise.com/cash-payment-for-oil-and-gas-royalty",
-    title: "I am interested in a cash payment for my minerals.",
-    description: "Learn about selling mineral rights and estimating value.",
-  },
-  {
-    href: "https://mineralwise.com/lease-proposals",
-    title: "I just received an oil or gas lease proposal — what's next?",
-    description: "Evaluate and understand lease offers before signing.",
-  },
-  {
-    href: "https://mineralwise.com/leased-but-not-producing",
-    title: "My mineral rights are leased but are not producing.",
-    description: "Guidance for newly-leased, non-producing properties.",
-  },
-  {
-    href: "https://mineralwise.com/unleased-mineral-owner",
-    title: "I am an un-leased mineral rights owner.",
-    description: "Attract drilling and understand your mineral value.",
-  },
-  {
-    href: "https://mineralwise.com/leased-and-producing",
-    title: "My mineral rights are leased and producing.",
-    description: "Answers for owners with producing wells.",
-  },
-  {
-    href: "https://mineralrightsforum.com/",
-    title: "Forum",
-    description: "Discuss with other landowners and experts.",
-  },
+  { href: "https://mineralwise.com/cash-payment-for-oil-and-gas-royalty", title: "I am interested in a cash payment for my minerals." },
+  { href: "https://mineralwise.com/lease-proposals", title: "I just received an oil or gas lease proposal — what's next?" },
+  { href: "https://mineralwise.com/leased-but-not-producing", title: "My mineral rights are leased but are not producing." },
+  { href: "https://mineralwise.com/unleased-mineral-owner", title: "I am an un-leased mineral rights owner." },
+  { href: "https://mineralwise.com/leased-and-producing", title: "My mineral rights are leased and producing." },
+  { href: "https://mineralrightsforum.com/", title: "Forum" },
 ];
 ---
 
 <Layout title="MineralWise - Leading Mineral Rights Education">
-  <div class="mineralwise-theme min-h-screen bg-[#fafbfa]">
+  <div class="mineralwise-theme min-h-screen bg-white">
     <!-- Navigation -->
-    <header class="sticky top-0 z-50 w-full border-b border-border bg-white/95 shadow-sm backdrop-blur">
-      <nav class="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
-        <a href="/" class="flex items-center gap-2">
-          <span class="text-2xl font-bold tracking-tight text-[#0d5c4a]">MineralWise</span>
+    <header class="border-b border-border bg-white">
+      <nav class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4 sm:px-6">
+        <a href="/" class="flex items-center">
+          <img
+            src={logoUrl}
+            alt="MineralWise"
+            class="h-10 w-auto object-contain"
+          />
         </a>
-        <div class="flex flex-wrap items-center justify-end gap-4 sm:gap-6">
-          <a href="https://mineralwise.com/owners-guide" class="text-sm font-medium text-muted-foreground transition-colors hover:text-[#0d5c4a]" target="_blank" rel="noopener">Owner's Guide</a>
-          <a href="https://mineralrightsforum.com/" class="text-sm font-medium text-muted-foreground transition-colors hover:text-[#0d5c4a]" target="_blank" rel="noopener">Forum</a>
-          <a href="/components" class="text-sm font-medium text-muted-foreground transition-colors hover:text-[#0d5c4a]">Components</a>
-          <Button variant="primary" href="https://mineralwise.com/owners-guide" target="_blank" rel="noopener" class="shrink-0">Start Here</Button>
+        <div class="flex items-center gap-6">
+          <a href="https://mineralwise.com/owners-guide" class="text-sm font-medium text-foreground transition-colors hover:text-primary" target="_blank" rel="noopener">Owner's Guide</a>
+          <a href="https://mineralrightsforum.com/" class="text-sm font-medium text-foreground transition-colors hover:text-primary" target="_blank" rel="noopener">Forum</a>
+          <a href="/components" class="text-sm font-medium text-foreground transition-colors hover:text-primary">Components</a>
+          <Button variant="primary" href="https://mineralwise.com/owners-guide" target="_blank" rel="noopener">Start Here</Button>
         </div>
       </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-[#0d5c4a] via-[#0f766e] to-[#0d5c4a] px-4 py-24 lg:py-32">
-      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=20')] bg-cover bg-center opacity-20 mix-blend-overlay" />
-      <div class="container relative z-10 mx-auto max-w-4xl text-center">
-        <p class="mb-4 text-lg font-medium uppercase tracking-widest text-white/90">Insight for</p>
-        <h1 class="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl">
+    <main class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+      <!-- Hero -->
+      <section class="mb-16">
+        <p class="mb-2 text-sm font-medium uppercase tracking-wider text-primary">Insight for</p>
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
           Mineral Owners
         </h1>
-        <p class="mx-auto mb-10 max-w-2xl text-xl text-white/95">
+        <p class="mb-8 text-lg text-muted-foreground">
           Empowering mineral rights owners with education, opportunities, and insights.
         </p>
-        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button variant="secondary" size="lg" href="https://mineralwise.com/owners-guide" target="_blank" rel="noopener" class="bg-white text-[#0d5c4a] hover:bg-white/90">
-            Start Here
-          </Button>
-          <a href="https://mineralrightsforum.com/" target="_blank" rel="noopener" class="text-white/90 underline underline-offset-4 transition-colors hover:text-white">
-            Visit the Mineral Rights Forum
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Situation Cards -->
-    <section id="situations" class="border-b border-border bg-white py-20">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="mb-4 text-3xl font-bold tracking-tight text-[#0d5c4a] sm:text-4xl">
-            Questions about Mineral Rights?
-          </h2>
-          <p class="mb-12 text-lg text-muted-foreground">
-            Click the link that best describes your situation.
+        <div class="flex flex-wrap gap-4">
+          <Button variant="primary" size="lg" href="https://mineralwise.com/owners-guide" target="_blank" rel="noopener">Start Here</Button>
+          <p class="flex items-center text-sm text-muted-foreground">
+            Discuss with other landowners at the{" "}
+            <a href="https://mineralrightsforum.com/" target="_blank" rel="noopener" class="font-medium text-primary underline underline-offset-2 hover:no-underline">Mineral Rights Forum</a>.
           </p>
         </div>
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      </section>
+
+      <!-- Situation Links -->
+      <section class="mb-16">
+        <h2 class="mb-2 text-2xl font-bold text-foreground">Questions about Mineral Rights?</h2>
+        <p class="mb-6 text-muted-foreground">Click the link that best describes your situation.</p>
+        <ul class="space-y-3 border-l-2 border-primary pl-6">
           {situationLinks.map((link) => (
-            <a href={link.href} target="_blank" rel="noopener" class="group block">
-              <Card class="h-full border-border bg-white transition-all duration-200 hover:border-[#0d5c4a]/50 hover:shadow-lg">
-                <CardHeader>
-                  <CardTitle class="group-hover:text-[#0d5c4a] transition-colors">{link.title}</CardTitle>
-                  <CardDescription>{link.description}</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <span class="text-sm font-medium text-[#0d5c4a] group-hover:underline">Learn more →</span>
-                </CardFooter>
-              </Card>
-            </a>
+            <li>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener"
+                class="block text-foreground transition-colors hover:text-primary hover:underline"
+              >
+                {link.title}
+              </a>
+            </li>
           ))}
-        </div>
-      </div>
-    </section>
+        </ul>
+      </section>
 
-    <!-- Mineral Rights & Surface Rights -->
-    <section class="border-b border-border bg-[#f0f4f3] py-20">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="mx-auto max-w-3xl">
-          <h2 class="mb-8 text-3xl font-bold tracking-tight text-[#0d5c4a]">
-            Mineral Rights and Surface Rights
-          </h2>
-          <div class="prose prose-lg max-w-none text-muted-foreground">
-            <p class="mb-6">
-              Mineral rights can be described as the unseen value associated with a tract of land. Historically, land was transferred among owners, with the royalty rights co-mingled with the surface rights. As oil and gas production began in the U.S., these rights started to be viewed independently. If mineral rights are severed, i.e. the process of separating mineral rights from the surface rights, a new and separate chain of title for the minerals begins.
-            </p>
-            <p>
-              Separate ownership of mineral rights and surface rights can sometimes cause confusion. Regarding oil and gas production, the owner of the surface rights has limited input whether oil or gas is produced from underneath his property. If production is established, a portion of the value is paid via a royalty fraction (i.e. percentage) to the mineral rights owner.
-            </p>
-          </div>
+      <!-- Mineral Rights & Surface Rights -->
+      <section class="mb-16">
+        <h2 class="mb-6 text-2xl font-bold text-foreground">Mineral Rights and Surface Rights</h2>
+        <div class="space-y-4 text-muted-foreground">
+          <p>
+            Mineral rights can be described as the unseen value associated with a tract of land. Historically, land was transferred among owners, with the royalty rights co-mingled with the surface rights. As oil and gas production began in the U.S., these rights started to be viewed independently. If mineral rights are severed, i.e. the process of separating mineral rights from the surface rights, a new and separate chain of title for the minerals begins.
+          </p>
+          <p>
+            Separate ownership of mineral rights and surface rights can sometimes cause confusion. Regarding oil and gas production, the owner of the surface rights has limited input whether oil or gas is produced from underneath his property. If production is established, a portion of the value is paid via a royalty fraction (i.e. percentage) to the mineral rights owner.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Leasing Your Mineral Rights -->
-    <section class="border-b border-border bg-white py-20">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="mx-auto max-w-3xl">
-          <h2 class="mb-8 text-3xl font-bold tracking-tight text-[#0d5c4a]">
-            Leasing Your Mineral Rights
-          </h2>
-          <div class="prose prose-lg max-w-none text-muted-foreground">
-            <p>
-              If a landman comes knocking at your door, it's wise to know a few things before signing an oil and gas lease. Here are two articles that will help you negotiate your oil and gas lease. The first, <strong>Oil and Gas Leases: Top Ten Things Not to Do</strong> describes some of the mistakes owners make and how you can avoid them. The second article, <strong>Oil and Gas Leasing: Top Ten Things to Do</strong> illustrates how you can pursue the best deal for your mineral rights regarding your lease bonus payment, royalty percentage, and other important lease provisions. Learn more about the process of oil and gas production in the article <strong>Oil and Gas Production in Nontechnical Language</strong>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- Leasing -->
+      <section class="mb-16">
+        <h2 class="mb-6 text-2xl font-bold text-foreground">Leasing Your Mineral Rights</h2>
+        <p class="text-muted-foreground">
+          If a landman comes knocking at your door, it's wise to know a few things before signing an oil and gas lease. Here are two articles that will help you negotiate your oil and gas lease. The first, <strong class="text-foreground">Oil and Gas Leases: Top Ten Things Not to Do</strong> describes some of the mistakes owners make and how you can avoid them. The second article, <strong class="text-foreground">Oil and Gas Leasing: Top Ten Things to Do</strong> illustrates how you can pursue the best deal for your mineral rights regarding your lease bonus payment, royalty percentage, and other important lease provisions. Learn more about the process of oil and gas production in the article <strong class="text-foreground">Oil and Gas Production in Nontechnical Language</strong>.
+        </p>
+      </section>
 
-    <!-- Mineral Rights Taxes -->
-    <section class="border-b border-border bg-[#f0f4f3] py-20">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="mx-auto max-w-3xl">
-          <h2 class="mb-8 text-3xl font-bold tracking-tight text-[#0d5c4a]">
-            Mineral Rights Taxes
-          </h2>
-          <div class="prose prose-lg max-w-none text-muted-foreground">
-            <p>
-              As with other assets, royalty rights come with a tax liability. These tax burdens vary depending on whether the minerals are being produced or not. Minerals can be taxed both at the state and county level, in addition to your Federal tax obligation. The County Ad Valorem Tax is generally levied only on producing minerals. There are several ways to mitigate tax impact, including the Depletion Allowance and 1031 Exchanges. The article <strong>Royalty Tax</strong> provides answers and links to common questions oil and gas royalty owners have about mineral right taxes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <!-- Taxes -->
+      <section class="mb-16">
+        <h2 class="mb-6 text-2xl font-bold text-foreground">Mineral Rights Taxes</h2>
+        <p class="text-muted-foreground">
+          As with other assets, royalty rights come with a tax liability. These tax burdens vary depending on whether the minerals are being produced or not. Minerals can be taxed both at the state and county level, in addition to your Federal tax obligation. The County Ad Valorem Tax is generally levied only on producing minerals. There are several ways to mitigate tax impact, including the Depletion Allowance and 1031 Exchanges. The article <strong class="text-foreground">Royalty Tax</strong> provides answers and links to common questions oil and gas royalty owners have about mineral right taxes.
+        </p>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0d5c4a] py-12">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="flex flex-col items-center justify-between gap-6 text-center sm:flex-row">
-          <a href="/" class="text-xl font-bold text-white">MineralWise</a>
-          <nav class="flex flex-wrap justify-center gap-6">
-            <a href="https://mineralwise.com/terms-and-conditions" target="_blank" rel="noopener" class="text-sm text-white/80 transition-colors hover:text-white">Terms & Conditions</a>
-            <a href="https://mineralwise.com/privacy-policy" target="_blank" rel="noopener" class="text-sm text-white/80 transition-colors hover:text-white">Privacy Policy</a>
-          </nav>
-        </div>
-        <p class="mt-8 text-center text-sm text-white/70">
-          Use of this site constitutes acceptance of our Terms & Conditions and Privacy Policy.
+    <footer class="border-t border-border bg-muted/30 py-8">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <a href="/" class="mb-4 block">
+          <img src={logoUrl} alt="MineralWise" class="h-8 w-auto object-contain opacity-80" />
+        </a>
+        <p class="mb-2 text-sm text-muted-foreground">
+          Use of this site constitutes acceptance of our{" "}
+          <a href="https://mineralwise.com/terms-and-conditions" target="_blank" rel="noopener" class="text-foreground underline hover:text-primary">Terms & Conditions</a>
+          {" "}and{" "}
+          <a href="https://mineralwise.com/privacy-policy" target="_blank" rel="noopener" class="text-foreground underline hover:text-primary">Privacy Policy</a>.
         </p>
-        <p class="mt-4 text-center text-sm text-white/60">
+        <p class="text-sm text-muted-foreground">
           © COPYRIGHT 2009-2025 KED INTERESTS, LLC - ALL RIGHTS RESERVED
         </p>
       </div>
