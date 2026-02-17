@@ -1,0 +1,60 @@
+---
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/starwind/tabs";
+
+interface TabItem {
+  value: string;
+  label: string;
+  content: string;
+}
+
+interface Props {
+  title?: string;
+  tabs?: TabItem[];
+}
+
+const {
+  title = "Learn More",
+  tabs = [
+    {
+      value: "overview",
+      label: "Overview",
+      content: "This landing page is built with Astro and Starwind UI. Astro ships zero JavaScript by default, so your site loads fast. Starwind provides beautiful, accessible components styled with Tailwind CSS v4.",
+    },
+    {
+      value: "features",
+      label: "Features",
+      content: "Key features include: a responsive navigation bar, hero section with background image, info cards, FAQ accordion, button groups, and a footer. All sections are built as reusable components that accept props for easy customization.",
+    },
+    {
+      value: "tech",
+      label: "Tech Stack",
+      content: "Astro 5, Tailwind CSS v4, and Starwind UI. The project uses the @tailwindcss/vite plugin for fast builds. Components support class overrides via the class prop for full styling control.",
+    },
+  ],
+} = Astro.props;
+---
+
+<section class="border-b border-border bg-background py-20">
+  <div class="container mx-auto max-w-2xl px-4">
+    <h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-foreground">
+      {title}
+    </h2>
+    <Tabs defaultValue={tabs[0]?.value ?? "overview"} class="w-full">
+      <TabsList class="mb-6 w-full justify-start">
+        {tabs.map((tab) => (
+          <TabsTrigger value={tab.value}>{tab.label}</TabsTrigger>
+        ))}
+      </TabsList>
+      {tabs.map((tab) => (
+        <TabsContent value={tab.value} class="rounded-lg border border-border bg-muted/30 p-6">
+          <p class="text-foreground">{tab.content}</p>
+        </TabsContent>
+      ))}
+    </Tabs>
+  </div>
+</section>

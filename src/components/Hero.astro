@@ -1,0 +1,36 @@
+---
+import { Button } from "@/components/starwind/button";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title = "Build Something Amazing",
+  subtitle = "Create fast, scalable websites with Astro and Starwind UI. Ship less JavaScript, deliver more.",
+  ctaText = "Get Started",
+  ctaHref = "#cta",
+  backgroundImage = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
+} = Astro.props;
+---
+
+<section
+  class="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-4 py-24"
+  style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${backgroundImage}'); background-size: cover; background-position: center;`}
+>
+  <div class="container relative z-10 mx-auto max-w-4xl text-center">
+    <h1 class="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+      {title}
+    </h1>
+    <p class="mb-10 text-lg text-white/90 sm:text-xl">
+      {subtitle}
+    </p>
+    <Button variant="primary" size="lg" href={ctaHref} class="bg-primary text-primary-foreground hover:bg-primary/90">
+      {ctaText}
+    </Button>
+  </div>
+</section>

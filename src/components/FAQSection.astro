@@ -1,0 +1,52 @@
+---
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/starwind/accordion";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title?: string;
+  items?: FAQItem[];
+}
+
+const {
+  title = "Frequently Asked Questions",
+  items = [
+    {
+      question: "What is Astro?",
+      answer: "Astro is a web framework for building fast, content-focused websites. It ships zero JavaScript by default and lets you add interactivity only where you need it.",
+    },
+    {
+      question: "What is Starwind UI?",
+      answer: "Starwind UI is a component library designed for Astro. It provides 40+ pre-built components styled with Tailwind CSS v4, including buttons, cards, accordions, and more.",
+    },
+    {
+      question: "Is it free to use?",
+      answer: "Yes! Both Astro and Starwind UI are open source. Starwind UI is MIT licensed, so you can use it in any project.",
+    },
+  ],
+} = Astro.props;
+---
+
+<section id="faq" class="py-20">
+  <div class="container mx-auto max-w-2xl px-4">
+    <h2 class="mb-12 text-center text-3xl font-bold tracking-tight text-foreground">
+      {title}
+    </h2>
+    <Accordion type="single" defaultValue="item-0">
+      {items.map((item, i) => (
+        <AccordionItem value={`item-${i}`}>
+          <AccordionTrigger>{item.question}</AccordionTrigger>
+          <AccordionContent>{item.answer}</AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  </div>
+</section>
